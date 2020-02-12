@@ -1,20 +1,22 @@
 /* VARIABLES ========================================================================== */
 
 // COLORS
-$teal: #63BDA2;
-$teal-darker: #359377;
-$gray-background: #F7F7F7;
-$gray-table-border: #EEEEEE;
-$gray-lightest: #D2D2D2;
-$gray-light: #ABABAB;
-$gray-medium: #898989;
-$gray-dark: #5F5F5F;
+$accent: #0093D8;
+$accent-dark: #015EAB;
+$accent-alt: #DB0372;
+$accent-alt-dark: #85144B;
+$background: #FFFFFF;
+$table-border: #EEEEEE;
+$lightest: #D2D2D2;
+$light: #ABABAB;
+$medium: #898989;
+$dark: #333333;
 $highlight: #FFEC5C;
 
 // FONTS
-$serif: "Comic Sans MS";
-$sans-serif: "Lobster Two";
-$code: "Lobster Two";
+$serif: "IBM Plex Serif";
+$sans-serif: "IBM Plex Sans";
+$code: "IBM Plex Mono";
 
 /* SASS IMPORT ========================================================================== */
 
@@ -34,23 +36,23 @@ body {
 
 html {
   margin: 0;
-  line-height: 170%;
+  line-height: 1.5;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 body {
-  color: $gray-dark;
+  color: $dark;
   font-family: $sans-serif;
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 14pt;
 }
 
 // TEXT
 article p {
   a {
-    text-decoration: underline;
-    text-decoration-skip-ink: auto;
-    color: $gray-dark;
+    text-decoration: none;
+    // text-decoration-skip-ink: auto;
+    color: $accent;
   }
 }
 
@@ -59,7 +61,7 @@ article .post-footer>a {
 }
 
 h1 {
-  font-size: 1.9em;
+  font-size: 1.75em;
   padding-top: 0.2em;
   margin: 0.5em 0em 0.75em 0em;
   font-family: $serif;
@@ -84,14 +86,14 @@ h2 {
   a {
     text-decoration: none;
     position: relative;
-    text-shadow: 0px -2px 0 white, 0px -1px 0 white, 0px 0px 0 white, 2px -2px 0 white, 2px -1px 0 white, 2px 0px 0 white, -2px -2px 0 white, -2px -1px 0 white, -2px 0px 0 white, 1px -2px 0 white, 1px -1px 0 white, 1px 0px 0 white, -1px -2px 0 white, -1px -1px 0 white, -1px 0px 0 white, 0px -2px 0 white, 0px -1px 0 white, 0px 0px 0 white;
+    // text-shadow: 0px -2px 0 white, 0px -1px 0 white, 0px 0px 0 white, 2px -2px 0 white, 2px -1px 0 white, 2px 0px 0 white, -2px -2px 0 white, -2px -1px 0 white, -2px 0px 0 white, 1px -2px 0 white, 1px -1px 0 white, 1px 0px 0 white, -1px -2px 0 white, -1px -1px 0 white, -1px 0px 0 white, 0px -2px 0 white, 0px -1px 0 white, 0px 0px 0 white;
     box-shadow: 0 -1px 0 0 white inset, 0 -2px 0 0 transparent inset;
     background-size: 1px 1em;
     position: relative;
     transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 
     &:hover {
-      box-shadow: 0 -1px 0 0 white inset, 0 -2px 0 0 $gray-dark inset;
+      box-shadow: 0 -1px 0 0 white inset, 0 -2px 0 0 $dark inset;
       transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
   }
@@ -118,9 +120,9 @@ p {
 
 // LINKS AND TAGS
 a {
-  text-decoration: underline;
-  text-decoration-skip-ink: auto;
-  color: $gray-dark;
+  text-decoration: none;
+  // text-decoration-skip-ink: auto;
+  color: $accent;
 }
 
 a,
@@ -129,25 +131,25 @@ a>svg {
 }
 
 a:visited {
-  color: $gray-dark;
+  // color: $accent-dark;
 }
 
 .color-link {
   text-decoration: none;
-  color: $teal;
+  color: $accent;
   font-family: $sans-serif;
   margin-right: 1.5em;
 }
 
 .color-link:visited {
-  color: $teal;
+  color: $accent;
 }
 
 .color-link:hover {
-  color: $teal-darker;
+  color: $accent-dark;
 
   .color-arrow {
-    fill: $teal-darker;
+    fill: $accent-dark;
   }
 }
 
@@ -155,27 +157,27 @@ a:visited {
   margin-right: 0.75em;
   margin-bottom: 1em;
   line-height: 1.75em;
-  color: $gray-light;
+  color: $light;
 }
 
 .tag:visited {
-  color: $gray-light;
+  color: $light;
 }
 
 .tag:hover {
-  color: $gray-medium;
+  color: $medium;
 }
 
 // ARTICLE FORMATTING
 time {
   margin-right: 1.5em;
-  color: $gray-light;
+  color: $light;
 }
 
 hr {
   border: 0;
   height: 0;
-  border-bottom: 1px solid $gray-lightest;
+  border-bottom: 1px solid $lightest;
 }
 
 ul,
@@ -193,7 +195,7 @@ mark {
 }
 
 blockquote {
-  border-left: 4px solid $gray-lightest;
+  border-left: 4px solid $lightest;
   padding-left: 1.3em;
   margin-left: 0em;
   margin-top: 0em;
@@ -209,7 +211,7 @@ cite {
 
 pre {
   padding: 1em;
-  background-color: $gray-background;
+  background-color: $background;
   max-width: 100%;
   overflow: scroll;
 }
@@ -217,7 +219,7 @@ pre {
 p code,
 kbd {
   font-size: 0.95rem;
-  background: $gray-background;
+  background: $background;
   padding: 0.2em;
 }
 
@@ -238,13 +240,13 @@ table {
   border-spacing: 0;
 
   thead {
-    background: $gray-background;
+    background: $background;
   }
 
   th,
   td {
     padding: 0.5em 1em;
-    border: 1px double $gray-table-border;
+    border: 1px double $table-border;
   }
 }
 
@@ -258,12 +260,15 @@ nav {
   margin: 1.5em 0em 1em 0em;
   text-align: center;
   line-height: 1.7em;
+  font-weight: bold;
+  font-style: italic;
 
   a {
     font-family: $serif;
     font-size: 1.5em;
     text-decoration: none;
     margin-top: 0.75em;
+    color: $accent-alt-dark;
   }
 }
 
@@ -272,6 +277,10 @@ nav {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+
+  a {
+    font-weight: 500;
+  }
 }
 
 .nav-link {
@@ -280,7 +289,7 @@ nav {
 
 .description {
   font-style: italic;
-  color: $gray-medium;
+  color: $medium;
   text-align: center;
   margin-bottom: 3.7em;
   margin-top: -0.75em;
@@ -313,7 +322,7 @@ nav {
 
   a {
     text-decoration: none;
-    color: $teal;
+    color: $accent;
     font-size: 0.95rem;
   }
 }
@@ -351,8 +360,8 @@ nav {
 // SHORTCODE CONTENT
 .twitter-tweet {
   font-family: $sans-serif !important;
-  border-left: 4px solid $teal !important;
-  color: $gray-dark !important;
+  border-left: 4px solid $accent !important;
+  color: $dark !important;
   font-size: 1rem !important;
   font-style: italic !important;
   margin-left: 0em;
@@ -366,8 +375,8 @@ nav {
   }
 
   a {
-    color: $gray-dark !important;
-    text-decoration: underline !important;
+    color: $dark !important;
+    // text-decoration: underline !important;
   }
 
   a:hover,
@@ -379,15 +388,15 @@ nav {
 .__h_instagram.card {
   font-family: $sans-serif !important;
   font-size: 1.1em !important;
-  border: 1px solid $gray-light;
+  border: 1px solid $light;
   margin-top: 1.2em !important;
 }
 
 // ARTICLE FOOTER
 .post-footer {
   font-size: 0.95rem;
-  color: $gray-light;
-  border-bottom: 1px solid $gray-lightest;
+  color: $light;
+  border-bottom: 1px solid $lightest;
   padding-bottom: 1.8em;
 }
 
@@ -399,16 +408,16 @@ nav {
 .page-footer {
   padding: 1.5em 0em 2em 0em;
   font-size: 0.95rem;
-  color: $gray-light;
+  color: $light;
 
   a {
     text-decoration: none;
-    color: $gray-light;
+    color: $light;
   }
 }
 
 .footer-divider {
-  color: $gray-lightest;
+  color: $lightest;
   margin-bottom: 1.5em;
 }
 
@@ -425,7 +434,7 @@ nav {
 .archives-list-item-date {
   width: 60px;
   margin-right: 0.25em;
-  color: $gray-light;
+  color: $light;
 }
 
 // 404 PAGE
@@ -451,7 +460,7 @@ nav {
   }
 
   .divider-bar {
-    color: $gray-light;
+    color: $light;
     padding: 0em 0.25em;
   }
 }
@@ -472,21 +481,21 @@ footer {
   }
 
   .social-icon>svg:hover {
-    fill: $gray-medium;
+    fill: $medium;
   }
 
   a {
     text-decoration: none;
     font-size: 0.95rem;
-    color: $gray-light;
+    color: $light;
   }
 
   a:visited {
-    color: $gray-light;
+    color: $light;
   }
 
   a:hover {
-    color: $gray-medium;
+    color: $medium;
   }
 }
 
