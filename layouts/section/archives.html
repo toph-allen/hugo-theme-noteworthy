@@ -7,6 +7,7 @@
      <!-- Group all the post pages from the same year -->
       {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
       {{ range ($pages.GroupByDate "2006") }}
+
           <h3>{{ .Key }}</h3> <!-- Display the year -->
 
           <ul class="archives-list"> 
