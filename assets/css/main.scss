@@ -216,19 +216,23 @@ pre {
   overflow: scroll;
 }
 
-p code,
-kbd {
-  font-size: 0.95rem;
-  background: $background;
-  padding: 0.2em;
-}
+// p code,
+// kbd {
+//   // font-size: 0.95em;
+//   background: $background;
+//   padding: 0.2em;
+// }
 
 code,
 pre,
 kbd {
   font-family: $code;
-  font-size: 0.95rem;
-  line-height: 154%;
+  font-size: 0.9em;
+  background-color: $table-border;
+  border-radius: 3px;
+  border-color: $lightest;
+  padding: 2px 2px;
+  // line-height: 154%;
 }
 
 .table-wrapper {

@@ -14,7 +14,10 @@
                     {{ .Title }}
                 </a>
             </h2>
-            <div><p>{{ .Summary }}</p></div>
+            <div><p>{{ .Summary }}
+                {{ if .Truncated }}<a href="{{ .RelPermalink }}">Read More…</a></p>
+            {{ end }}
+            </div>
             <div class="post-footer">
             <time>{{ .Date.Format "January 2, 2006" }}</time>
 

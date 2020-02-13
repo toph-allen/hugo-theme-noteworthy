@@ -9,10 +9,8 @@
                     {{ .Title }}
                 </a>
             </h2>
-            <div><p>{{ .Summary }}</p>
-            {{ if .Truncated }}
-            <!-- This <div> includes a read more link, but only if the summary is truncated... -->
-              <p class="right-aligned"><a href="{{ .RelPermalink }}">Read More…</a></p>
+            <div><p>{{ .Summary }}
+                {{ if .Truncated }}<a href="{{ .RelPermalink }}">Read More…</a></p>
             {{ end }}
             </div>
             <div class="post-footer">
