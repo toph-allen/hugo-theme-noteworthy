@@ -115,7 +115,7 @@ h3 {
 }
 
 p {
-  margin: 0em 0 1em 0;
+  margin: 1em 0 1em 0;
 }
 
 // LINKS AND TAGS
@@ -240,7 +240,8 @@ kbd {
 }
 
 table {
-  max-width: 100%;
+  table-layout: fixed;
+  width: 100%;
   border-spacing: 0;
 
   thead {
@@ -252,6 +253,10 @@ table {
     padding: 0.5em 1em;
     border: 1px double $table-border;
   }
+}
+
+img {
+  max-width: 100%;
 }
 
 // TOP NAV
