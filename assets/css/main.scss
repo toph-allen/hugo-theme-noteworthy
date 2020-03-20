@@ -373,11 +373,18 @@ nav {
 
 // TWITCH EMBED
 
+
+// 
+
+.twitch-visible {
+  display: none;
+}
+
 .twitch-container {
   width: 100%;
   padding-top: 56.26%;
   position: relative;
-  display: grid;
+  // display: flex;
 }
 
 #twitch-stream {

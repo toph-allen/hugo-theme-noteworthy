@@ -1,30 +1,36 @@
 <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 
-<script>
-const clientId = "j3y5xs3vaacve0ezmm8b66m2fkiesk";
-var response = fetch("https://api.twitch.tv/helix/streams?user_id=151006126", {
-    method: "GET",
-    headers: {
-        "Client-ID": clientId
-    }
-})
-.then(data=>{return data.json()})
-// .then(res=>{console.log(res)})
 
-json = response.json();
-</script>
-
-<div class="twitch-container">
+<div class="twitch-visible"><h2>Hi! I'm streaming on Twitch right now. 👋</h2></div>
+<div class="twitch-container twitch-visible">
   <div id="twitch-stream"></div>
-  <script type="text/javascript">
-    var options = {
-      width: "100%",
-      height: "100%",
-      channel: "tophallen",
-      // only needed if your site is also embedded on embed.example.com and othersite.example.com 
-      parent: ["toph.io", "www.toph.io"]
-    };
-    var player = new Twitch.Player("twitch-stream", options);
-    // player.setVolume(0.5);
-  </script>
 </div>
+
+<script type="text/javascript">
+  var options = {
+    width: "100%",
+    height: "100%",
+    channel: "tophallen",
+    // only needed if your site is also embedded on embed.example.com and othersite.example.com 
+    // parent: ["toph.io", "www.toph.io"]
+  };
+  var player = new Twitch.Player("twitch-stream", options);
+  // if (player.getEnded() == "false") {
+  //   document.getElementById("twitch-container").style.display="grid";
+  // }
+  // player.setVolume(0.5);
+  player.addEventListener("online", function() {
+    var elems = document.getElementsByClassName("twitch-visible");
+    for (let elem of elems) {
+      elem.style.display = "flex";
+    };
+    console.log("Playing")
+  })
+  player.addEventListener("offline", function() {
+    var elems = document.getElementsByClassName("twitch-visible");
+    for (let elem of elems) {
+      elem.style.display = "none";
+    };
+    console.log("Ended")
+  })
+</script>
