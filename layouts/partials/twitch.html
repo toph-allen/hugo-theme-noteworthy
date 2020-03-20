@@ -1,6 +1,18 @@
 <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 
+<script>
+const clientId = "j3y5xs3vaacve0ezmm8b66m2fkiesk";
+var response = fetch("https://api.twitch.tv/helix/streams?user_id=151006126", {
+    method: "GET",
+    headers: {
+        "Client-ID": clientId
+    }
+})
+.then(data=>{return data.json()})
+// .then(res=>{console.log(res)})
 
+json = response.json();
+</script>
 
 <div class="twitch-container">
   <div id="twitch-stream"></div>
