@@ -5,14 +5,7 @@
             <p>{{ .Site.Params.Description | markdownify }}</p>
         </div>
         {{ end }}
-        <iframe
-            src="https://player.twitch.tv/?tophallen&parent=toph.io"
-            height="<height>"
-            width="<width>"
-            frameborder="<frameborder>"
-            scrolling="<scrolling>"
-            allowfullscreen="<allowfullscreen>">
-        </iframe>
+        {{ partial "twitch.html" . }}
         <h1>Recent Posts</h1>
         <!-- Range over the pages and only include the ones that are a post type -->
         {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}

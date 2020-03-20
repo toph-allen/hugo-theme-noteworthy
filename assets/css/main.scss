@@ -371,6 +371,30 @@ nav {
   vertical-align: middle;
 }
 
+// TWITCH EMBED
+
+.twitch-container {
+  width: 100%;
+  padding-top: 56.26%;
+  position: relative;
+  display: grid;
+}
+
+#twitch-stream {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+}
+
 // SHORTCODE CONTENT
 .twitter-tweet {
   font-family: $serif !important;
