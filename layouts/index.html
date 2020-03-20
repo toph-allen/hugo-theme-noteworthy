@@ -4,6 +4,14 @@
         <div class="description">
             <p>{{ .Site.Params.Description | markdownify }}</p>
         </div>
+        <iframe
+            src="https://player.twitch.tv/?tophallen&parent=toph.io"
+            height="<height>"
+            width="<width>"
+            frameborder="<frameborder>"
+            scrolling="<scrolling>"
+            allowfullscreen="<allowfullscreen>">
+        </iframe>
         {{ end }}
         <!-- Range over the pages and only include the ones that are a post type -->
         {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
